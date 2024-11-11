@@ -81,6 +81,25 @@ a{
     padding-left: 10px;
     padding-right: 10px;
     border: 1px solid var(--darkest-grey-4);
+    border-radius: 1rem;
+}
+
+.boton-menu.active{
+    color: var(--light-gray-2);
+    background-color: var(--white);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid var(--light-gray-2);
+    border-radius: 1rem;
+}
+
+.boton-menu:hover{
+    border: 1px solid var(--white);
+    color: var(--white);
+    background-color: var(--dark-grey-1);
+    transition: .4s;
+    border-radius: 1rem;
 }
 
 .boton-menu:active{
@@ -90,7 +109,7 @@ a{
     padding-left: 10px;
     padding-right: 10px;
     border: 1px solid var(--light-gray-2);
-    border-radius: 2rem;
+    border-radius: 1rem;
 }
 
 .boton-carrito{
@@ -126,12 +145,14 @@ main{
     background-size: cover;
     background-position: center;
     margin-top: 0;
+    padding-bottom: 2rem;
 }
 
 .titulo-principal{
     color: var(--white);
     font-size: 35px;
     padding: 1.5rem;
+    text-align: center;
 }
 
 .contenedor-productos{

@@ -17,70 +17,36 @@
             <h1 class="logo">E-Commerce</h1>
             <ul>
                 <li>
-                    <button class="boton-menu boton-categoria">Nuestros productos</button>
+                    <button id="todos" class="boton-menu boton-categoria active">Nuestros productos</button>
                 </li>
                 <li>
-                    <button class="boton-menu boton-categoria">Abrigos</button>
+                    <button id="abrigos" class="boton-menu boton-categoria">Abrigos</button>
                 </li>
                 <li>
-                    <button class="boton-menu boton-categoria">Camisetas</button>
+                    <button id="camisetas" class="boton-menu boton-categoria">Camisetas</button>
                 </li>
                 <li>
-                    <button class="boton-menu boton-categoria">Pantalones</button>
+                    <button id="pantalones" class="boton-menu boton-categoria">Pantalones</button>
                 </li>
                 <li>
                     <a class="boton-menu boton-carrito" href="./cart.html">Carrito</a>
-                    <span class="contador">0</span>
+                    <span id="contador" class="contador">0</span>
                 </li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2 class="titulo-principal">Todos los productos</h2>
-        <div class="contenedor-productos">
-
-            <div class="producto">
-                <img class="producto-imagen" src="./img/producto-placeholder.png" alt="">
-                <div class="producto-descripcion">
-                    <h3 class="producto-titulo">producto1</h3>
-                    <p class="producto-precio">precio1</p>
-                    <button class="producto-agregar">AGREGAR</button>
-                </div>
-            </div>
-
-            <div class="producto">
-                <img class="producto-imagen" src="./img/producto-placeholder.png" alt="">
-                <div class="producto-descripcion">
-                    <h3 class="producto-titulo">producto2</h3>
-                    <p class="producto-precio">precio2</p>
-                    <button class="producto-agregar">AGREGAR</button>
-                </div>
-            </div>
-
-            <div class="producto">
-                <img class="producto-imagen" src="./img/producto-placeholder.png" alt="">
-                <div class="producto-descripcion">
-                    <h3 class="producto-titulo">producto3</h3>
-                    <p class="producto-precio">precio3</p>
-                    <button class="producto-agregar">AGREGAR</button>
-                </div>
-            </div>
-
-            <div class="producto">
-                <img class="producto-imagen" src="./img/producto-placeholder.png" alt="">
-                <div class="producto-descripcion">
-                    <h3 class="producto-titulo">producto4</h3>
-                    <p class="producto-precio">precio4</p>
-                    <button class="producto-agregar">AGREGAR</button>
-                </div>
-            </div>
-
+        <h2 id="titulo-principal" class="titulo-principal">Todos los productos</h2>
+        <div id="contenedor-productos" class="contenedor-productos">
+            <!--! Este contenedor sera rellenado con JS -->
         </div>
     </main>
 
     <footer>
         <p class="texto-footer">© 2024 E-Commerce</p>
     </footer>
+
+    <script src="./js/app.js"></script>
 </body>
 </html>
