@@ -1,93 +1,93 @@
 let productos = [    
     {
     id: "buzo-1",
-    titulo: "buzo 1",
-    imagen: "./img/producto-placeholder.png",
+    titulo: "Buzo negro",
+    imagen: "./img/buzo1.png",
     categoria: {
         nombre: "Abrigos",
         id: "abrigos"
         },
-    precio: 1000
+    precio: 10000
     },
     {
     id: "buzo-2",
-    titulo: "buzo 2",
-    imagen: "./img/producto-placeholder.png",
+    titulo: "Buzo azul",
+    imagen: "./img/buzo2.png",
     categoria: {
         nombre: "Abrigos",
         id: "abrigos"
         },
-    precio: 1000
+    precio: 10000
     },
     {
     id: "buzo-3",
-    titulo: "buzo 3",
-    imagen: "./img/producto-placeholder.png",
+    titulo: "Buzo rojo",
+    imagen: "./img/buzo3.png",
     categoria: {
         nombre: "Abrigos",
         id: "abrigos"
         },
-    precio: 1000
+    precio: 10000
     },
     {
     id: "camiseta-1",
-    titulo: "camiseta 1",
-    imagen: "./img/producto-placeholder.png",
+    titulo: "Camiseta roja",
+    imagen: "./img/camiseta1.png",
     categoria: {
         nombre: "Camisetas",
         id: "camisetas"
         },
-    precio: 1000
+    precio: 4000
     },
     {
     id: "camiseta-2",
-    titulo: "camiseta 2",
-    imagen: "./img/producto-placeholder.png",
+    titulo: "Camiseta purpura",
+    imagen: "./img/camiseta2.png",
     categoria: {
         nombre: "Camisetas",
         id: "camisetas"
         },
-    precio: 1000
+    precio: 4000
     },
     {
     id: "camiseta-3",
-    titulo: "camiseta 3",
-    imagen: "./img/producto-placeholder.png",
+    titulo: "Camiseta celeste",
+    imagen: "./img/camiseta3.png",
     categoria: {
         nombre: "Camisetas",
         id: "camisetas"
         },
-    precio: 1000
+    precio: 4000
     },
     {
     id: "pantalon-1",
-    titulo: "pantalon 1",
-    imagen: "./img/producto-placeholder.png",
+    titulo: "Pantalon jean azul",
+    imagen: "./img/pantalon1.png",
     categoria: {
         nombre: "Pantalones",
         id: "pantalones"
         },
-    precio: 1000
+    precio: 7000
     },
     {
     id: "pantalon-2",
-    titulo: "pantalon 2",
-    imagen: "./img/producto-placeholder.png",
+    titulo: "Pantalon cargo oliva",
+    imagen: "./img/pantalon2.png",
     categoria: {
         nombre: "Pantalones",
         id: "pantalones"
         },
-    precio: 1000
+    precio: 7000
     },
     {
     id: "pantalon-3",
-    titulo: "pantalon 3",
-    imagen: "./img/producto-placeholder.png",
+    titulo: "Pantalon cargo marron",
+    imagen: "./img/pantalon3.png",
     categoria: {
         nombre: "Pantalones",
         id: "pantalones"
         },
-    precio: 1000
+    precio: 7000
     },
 ]
 
@@ -110,7 +110,7 @@ function cargarProductos(productosElegidos){
             <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
             <div class="producto-descripcion">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
-                <p class="producto-precio">${producto.precio}</p>
+                <p class="producto-precio">$${producto.precio}</p>
                 <button class="producto-agregar" id ="${producto.id}">AGREGAR</button>
             </div>
         `;
