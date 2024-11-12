@@ -149,10 +149,10 @@ function actualizarProductoAgregar (){
 }
 
 let carrito;
-const carritoLocalStorage = JSON.parse(localStorage.getItem("carrito"))
+const carritoLocalStorage = localStorage.getItem("carrito")
 
 if(carritoLocalStorage){
-    carrito = carritoLocalStorage
+    carrito = JSON.parse(carritoLocalStorage)
     aumentarContador()
 } else{
     carrito = []
