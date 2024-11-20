@@ -69,6 +69,21 @@ function actualizarbotonEliminar (){
 }
 
 function eliminarDelCarrito(e) {
+
+    Toastify({
+        text: "El producto ha sido eliminado!",
+        duration: 3000,
+        close: false,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, rgb(51,51,51,255), rgb(102,102,102,255)",
+            borderRadius: "1rem"
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
+
     const idBoton = e.currentTarget.id
     const index = carrito.findIndex(producto => producto.id === idBoton)
 
@@ -81,9 +96,29 @@ function eliminarDelCarrito(e) {
 botonVaciarCarrito.addEventListener("click", vaciarCarrito)
 
 function vaciarCarrito(){
-    carrito.length = 0
-    localStorage.setItem("carrito", JSON.stringify(carrito))
-    cargarProductosCarrito()
+
+    Swal.fire({
+        title: "Realmente desea vaciar el carrito?",
+        text: "Todos los productos seran eliminados!",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "rgb(153,153,153,255)",
+        cancelButtonColor: "rgb(51,51,51,255)",
+        confirmButtonText: "Si, vacialo!",
+        cancelButtonText: "Cancelar"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "Listo!",
+                text: "Tu carrito ha sido vaciado.",
+                icon: "success",
+                confirmButtonColor: "rgb(153,153,153,255)"
+            });
+            carrito.length = 0
+            localStorage.setItem("carrito", JSON.stringify(carrito))
+            cargarProductosCarrito()
+        }
+    });
 }
 
 function calcularTotal(){
@@ -94,10 +129,17 @@ function calcularTotal(){
 botonComprarCarrito.addEventListener("click", comprarCarrito)
 
 function comprarCarrito(){
+
+    Swal.fire({
+        title: "¡Muchas gracias por su compra!",
+        icon: "success",
+        confirmButtonColor: "rgb(153,153,153,255)"
+    });
+
     carrito.length = 0
     localStorage.setItem("carrito", JSON.stringify(carrito))
     
-    contenedorCarritoVacio.classList.add("disabled")
+    contenedorCarritoVacio.classList.remove("disabled")
     contenedorCarritoProductos.classList.add("disabled")
     contenedorCarritoAcciones.classList.add("disabled")
     contenedorCarritoComprado.classList.remove("disabled")

@@ -1,95 +1,11 @@
-let productos = [    
-    {
-    id: "buzo-1",
-    titulo: "Buzo negro",
-    imagen: "./img/buzo1.png",
-    categoria: {
-        nombre: "Abrigos",
-        id: "abrigos"
-        },
-    precio: 10000
-    },
-    {
-    id: "buzo-2",
-    titulo: "Buzo azul",
-    imagen: "./img/buzo2.png",
-    categoria: {
-        nombre: "Abrigos",
-        id: "abrigos"
-        },
-    precio: 10000
-    },
-    {
-    id: "buzo-3",
-    titulo: "Buzo rojo",
-    imagen: "./img/buzo3.png",
-    categoria: {
-        nombre: "Abrigos",
-        id: "abrigos"
-        },
-    precio: 10000
-    },
-    {
-    id: "camiseta-1",
-    titulo: "Camiseta roja",
-    imagen: "./img/camiseta1.png",
-    categoria: {
-        nombre: "Camisetas",
-        id: "camisetas"
-        },
-    precio: 4000
-    },
-    {
-    id: "camiseta-2",
-    titulo: "Camiseta purpura",
-    imagen: "./img/camiseta2.png",
-    categoria: {
-        nombre: "Camisetas",
-        id: "camisetas"
-        },
-    precio: 4000
-    },
-    {
-    id: "camiseta-3",
-    titulo: "Camiseta celeste",
-    imagen: "./img/camiseta3.png",
-    categoria: {
-        nombre: "Camisetas",
-        id: "camisetas"
-        },
-    precio: 4000
-    },
-    {
-    id: "pantalon-1",
-    titulo: "Pantalon jean azul",
-    imagen: "./img/pantalon1.png",
-    categoria: {
-        nombre: "Pantalones",
-        id: "pantalones"
-        },
-    precio: 7000
-    },
-    {
-    id: "pantalon-2",
-    titulo: "Pantalon cargo oliva",
-    imagen: "./img/pantalon2.png",
-    categoria: {
-        nombre: "Pantalones",
-        id: "pantalones"
-        },
-    precio: 7000
-    },
-    {
-    id: "pantalon-3",
-    titulo: "Pantalon cargo marron",
-    imagen: "./img/pantalon3.png",
-    categoria: {
-        nombre: "Pantalones",
-        id: "pantalones"
-        },
-    precio: 7000
-    },
-]
+let productos = []
+
+fetch("./js/productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data
+        cargarProductos(productos)
+    })
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonCategoria = document.querySelectorAll(".boton-categoria");
@@ -120,7 +36,6 @@ function cargarProductos(productosElegidos){
 
     actualizarProductoAgregar()
 }
-cargarProductos(productos);
 
 botonCategoria.forEach(boton=>{
     boton.addEventListener("click", (e)=>{
@@ -159,6 +74,21 @@ if(carritoLocalStorage){
 }
 
 function agregarAlCarrito(e) {
+
+    Toastify({
+        text: "Producto agregado al carrito!",
+        duration: 3000,
+        close: false,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, rgb(51,51,51,255), rgb(102,102,102,255)",
+            borderRadius: "1rem"
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
+
     const idBoton = e.currentTarget.id
     const productoAgregado = productos.find(producto => producto.id === idBoton)
 
